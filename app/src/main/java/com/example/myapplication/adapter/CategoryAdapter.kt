@@ -24,6 +24,7 @@ class CategoryAdapter (private val categoryList : List<CategoryModel>) :
                         RequestOptions().transform(RoundedCorners(32))
                     )
                     .into(binding.coverImageView)
+//                Log.i("SONG",category.songs.size.toString())
 
                 val context = binding.root.context
                 binding.root.setOnClickListener{

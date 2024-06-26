@@ -6,33 +6,30 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.request.RequestOptions
+import com.example.myapplication.SongsListActivity
 import com.example.myapplication.databinding.SongListItemRecyclerRowBinding
 import com.example.myapplication.models.SongModel
 import com.google.firebase.firestore.FirebaseFirestore
 
-class SongsListAdapter(private  val songIdList : List<String>) :
+class SongsListAdapter (private val songIdList : List<String>) :
     RecyclerView.Adapter<SongsListAdapter.MyViewHolder>() {
 
     class MyViewHolder(private val binding: SongListItemRecyclerRowBinding) : RecyclerView.ViewHolder(binding.root){
-        //bind data with view
         fun bindData(songId : String){
-
             FirebaseFirestore.getInstance().collection("songs")
                 .document(songId).get()
                 .addOnSuccessListener {
                     val song = it.toObject(SongModel::class.java)
                     song?.apply {
                         binding.songTitleTextView.text = title
-                        binding.songSubtitleTextView.text = subtitle
+                        binding.songSubtitleTextView.text = sub_title
                         Glide.with(binding.songCoverImageView).load(coverUrl)
                             .apply(
                                 RequestOptions().transform(RoundedCorners(32))
                             )
                             .into(binding.songCoverImageView)
-
                     }
                 }
-
         }
     }
 
@@ -48,5 +45,4 @@ class SongsListAdapter(private  val songIdList : List<String>) :
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         holder.bindData(songIdList[position])
     }
-
 }

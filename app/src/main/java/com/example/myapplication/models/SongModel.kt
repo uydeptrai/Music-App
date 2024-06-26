@@ -3,7 +3,7 @@ package com.example.myapplication.models
 data class SongModel(
     val id : String,
     val title : String,
-    val subtitle : String,
+    val sub_title : String,
     val url : String,
     val coverUrl : String,
 ) {
