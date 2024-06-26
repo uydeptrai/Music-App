@@ -4,6 +4,7 @@ import android.content.Context
 import androidx.media3.common.MediaItem
 import androidx.media3.exoplayer.ExoPlayer
 import com.example.myapplication.models.SongModel
+import com.google.firebase.firestore.FirebaseFirestore
 
 object MyExoplayer {
     private var exoPlayer : ExoPlayer? = null
@@ -24,6 +25,7 @@ object MyExoplayer {
         if(currentSong!=song){
             //Its a new song so start playing
             currentSong = song
+            updateCount()
             currentSong?.url?.apply {
                 val mediaItem = MediaItem.fromUri(this)
                 exoPlayer?.setMediaItem(mediaItem)
@@ -34,6 +36,25 @@ object MyExoplayer {
         }
 
 
+    }
+    fun updateCount(){
+        currentSong?.id?.let {id->
+            FirebaseFirestore.getInstance().collection("songs")
+                .document(id)
+                .get().addOnSuccessListener {
+                    var latestCount = it.getLong("count")
+                    if(latestCount==null){
+                        latestCount = 1L
+                    }else{
+                        latestCount = latestCount+1
+                    }
+
+                    FirebaseFirestore.getInstance().collection("songs")
+                        .document(id)
+                        .update(mapOf("count" to latestCount))
+
+                }
+        }
     }
 
 }
