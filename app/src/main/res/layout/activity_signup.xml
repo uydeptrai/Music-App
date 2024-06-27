@@ -26,10 +26,19 @@
             android:fontFamily="monospace"
             android:gravity="center"
             android:paddingTop="8dp"
-            android:text="Explore latest hits only on Music Stream"
-            android:textColor="@color/textWhite"
-            android:textSize="22sp"
+            android:text="TEE"
+            android:textColor="@color/black"
+            android:textSize="30sp"
             android:textStyle="bold" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="monospace"
+            android:gravity="center"
+            android:paddingTop="8dp"
+            android:text="MORDEN MUSIC APP"
+            android:textColor="@color/black"
+            android:textSize="22sp" />
 
 
     </LinearLayout>
@@ -87,7 +96,8 @@
             android:layout_width="wrap_content"
             android:layout_height="60dp"
             android:text="Create Account"
-            android:id="@+id/create_account_btn"/>
+            android:id="@+id/create_account_btn"
+            android:backgroundTint="@color/black"/>
 
         <ProgressBar
             android:layout_width="32dp"
@@ -102,7 +112,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Already have an account?"
-            android:textColor="@color/textWhite"
+            android:textColor="@color/gray"
             android:gravity="center"
             android:id="@+id/goto_login_btn"/>
 

@@ -22,7 +22,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Welcome back"
-            android:textColor="@color/white"
+            android:textColor="@color/black"
             android:textSize="24sp"
             android:gravity="center"/>
         <ImageView
@@ -51,7 +51,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Categories"
-                android:textColor="@color/white"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:fontFamily="sans-serif-medium"/>
 
@@ -76,7 +76,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/section_1_title"
                     tools:text="Trending"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:fontFamily="sans-serif-medium"/>
 
@@ -107,7 +107,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/section_2_title"
                     tools:text="Trending"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:fontFamily="sans-serif-medium"/>
 
@@ -138,7 +138,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/section_3_title"
                     tools:text="Trending"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:fontFamily="sans-serif-medium"/>
 
@@ -167,7 +167,7 @@
                     android:layout_height="wrap_content"
                     android:id="@+id/mostly_played_title"
                     tools:text="Trending"
-                    android:textColor="@color/white"
+                    android:textColor="@color/black"
                     android:textSize="20sp"
                     android:fontFamily="sans-serif-medium"/>
 
